@@ -2,90 +2,90 @@
 tags:
   - File
 ---
-# File "locusts.xml"
-This file is used to define the properties of Locust familiars, spawned by Abyss.
+# 文件 "locusts.xml"
+此文件用于定义由无底坑(堕化亚玻伦初始道具)生成的无底坑蝗虫的属性。
 
-**Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.
+**Resource-Folder**{: .xmlInfo .red}：在模组的resource文件夹中使用此文件会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .green}: Using this file in a content folder of a mod will add new locusts.
+**Content-Folder**{: .xmlInfo .green}：在模组的content文件夹中使用此文件会添加新的locust。
 
 
-### "color" nodes
-Used to define color a locust can have.
+### "color" 节点
+用于定义无底坑蝗虫可拥有的颜色。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| name | str | Name of the color which will be used to reference it in the "locust" nodes|
-| r | int | Red |
-| g | int | Green |
-| b | int | Blue |
-| or | int | Offset Red |
-| og | int | Offset Blue |
-| ob | int | Offset Green |
+| name | str | 颜色名称，在"locust"节点中引用|
+| r | int | 红色分量 |
+| g | int | 绿色分量 |
+| b | int | 蓝色分量 |
+| or | int | 红色偏移量 |
+| og | int | 蓝色偏移量 |
+| ob | int | 绿色偏移量 |
 
-### "scale" nodes
-Used to define default scales a locust can have based on item quality.
+### "scale" 节点
+用于根据物品品质定义无底坑蝗虫的默认缩放比例。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| scale | float | scale corresponding to the quality |
-| quality | int | item quality |
+| scale | float | 对应品质的缩放比例 |
+| quality | int | 物品品质 |
 
 
-### "locust" nodes
-Used to define the special properties of the locust created from the item with the given ID.
+### "locust" 节点
+用于定义由指定ID物品生成的无底坑蝗虫的特殊属性。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| id | int | Id of the Collectible which Abyss destroyed |
+| id | int | 无底坑吞噬的Collectible的ID |
 | backColor | string | |
-| backGfx | string | special back-side spritesheet the locust should use |
-| collisionInterval | int | affects the delay between dealing damage on contact |
-| color | string | Name of color used by this locust |
-| count | int | Number of locusts spawned |
-| damageMultiplier | float | constant damage multiplier |
-| damageMultiplier2 | float | chance based to deal increased damage on hit |
-| gfx | string | special spritesheet the locust should use |
-| locustFlags | string | id of the locust effect to use. Guaranteed to be applied if no `procChance` defined. Can have multiple by seperating two ids with a space. example: "1 15" |
-| locustFlags2 | string | id of the locust effect to use. Applied based on `procChance` or `procChance2`. Can have multiple by seperating two ids with a space. example: "1 15"  |
-| locustFlags3 | string | id of the locust effect to use. Applied based on `procChance3`. Can have multiple by seperating two ids with a space. example: "1 15"  |
-| mutexFlags1 | int | *Bug: crashes the game* |
-| mutexFlags2 | int | Handles mutual exclusivity. If set to value `x` , makes flag 2 unable to be triggered if flag `x` is triggered |
-| mutexFlags3 | int | *no effect right now* |
-| speed | float | the speed multiplier for the locust (default: 1) |
+| backGfx | string | 无底坑蝗虫应使用的特殊背面spritesheet |
+| collisionInterval | int | 影响接触伤害的间隔 |
+| color | string | 无底坑蝗虫使用的颜色名称 |
+| count | int | 生成的无底坑蝗虫数量 |
+| damageMultiplier | float | 固定伤害倍率 |
+| damageMultiplier2 | float | 有概率造成更高伤害 |
+| gfx | string | 无底坑蝗虫应使用的特殊spritesheet |
+| locustFlags | string | 要应用的无底坑蝗虫效果ID。如果未定义`procChance`则必定应用。可用空格分隔多个ID，如"1 15" |
+| locustFlags2 | string | 要应用的无底坑蝗虫效果ID。根据`procChance`或`procChance2`应用。可用空格分隔多个ID，如"1 15"  |
+| locustFlags3 | string | 要应用的无底坑蝗虫效果ID。根据`procChance3`应用。可用空格分隔多个ID，如"1 15"  |
+| mutexFlags1 | int | *Bug: 会导致游戏崩溃* |
+| mutexFlags2 | int | 互斥处理。如果设为x，则flag 2在flag x被触发时无法被触发 |
+| mutexFlags3 | int | *目前无效* |
+| speed | float | 无底坑蝗虫的速度倍率（默认1） |
 | shootBackGfx | string ||
-| shootGfx | string | defines an .anm2 to use when the locust is charging |
+| shootGfx | string | 无底坑蝗虫蓄力时使用的.anm2 |
 | shootOverlayGfx | string ||
-| overlayColor | string | Name of color used by the overlay effect |
-| overlayGfx | string |special overlay spritesheet the locust should use |
-| tearFlags | int | id of the [TearFlag](../enums/TearFlags.md) to use. Guaranteed to be applied if no `procChance` defined |
-| tearFlags2 | int |id of the [TearFlag](../enums/TearFlags.md) to use. Applied based on `procChance` or `procChance2` |
-| tearFlags3 | int |id of the [TearFlag](../enums/TearFlags.md) to use. Applied based on `procChance3` |
-| procChance | float | The chance of applying `tearFlags` and `locustFlags`. (default: 1) |
-| procChance2 | float | The chance of applying `tearFlags2` and `locustFlags2` |
-| procChance3 | float | The chance of applying `tearFlags3` and `locustFlags3` |
-| scale | float | Size multiplier of the locust |
+| overlayColor | string | 叠加特效使用的颜色名称 |
+| overlayGfx | string |locust应使用的特殊叠加spritesheet |
+| tearFlags | int | 要应用的[TearFlag](../enums/TearFlags.md)的ID。如果未定义`procChance`则必定应用 |
+| tearFlags2 | int |要应用的[TearFlag](../enums/TearFlags.md)的ID。根据`procChance`或`procChance2`应用 |
+| tearFlags3 | int |要应用的[TearFlag](../enums/TearFlags.md)的ID。根据`procChance3`应用 |
+| procChance | float | 应用`tearFlags`和`locustFlags`的概率（默认1） |
+| procChance2 | float | 应用`tearFlags2`和`locustFlags2`的概率 |
+| procChance3 | float | 应用`tearFlags3`和`locustFlags3`的概率 |
+| scale | float | locust的体型倍率 |
 
 
-### Effects for locust Flags
-| id | effect |
+### locustFlags 效果一览
+| id | 效果 |
 |:--|:--|
-| 0 | Spawn explosions when damaging an enemy |
-| 1 | Random effect |
-| 2 | Multiple locusts act like one(?) - Used for items that produce several locusts |
-| 3 | Reroll enemy on hit |
-| 4 | Damage all enemies in room when damaging an enemy |
-| 5 | Erase an enemy type when damaging an enemy |
-| 6 | Knife spining around locust when its attacking |
-| 7 | Scream. Damages enemies nearby |
-| 8 | Spawn a Maw of the void ring |
-| 9 | Gain a projectile repelling aura when charging |
-| 10 | Spawn poison fart when damaging an enemy |
-| 11 | Spawn a fart when damaging an enemy |
-| 12 | Spawn an anti-gravity brimstone when damaging an enemy |
-| 13 | Spawn green creep when damaging an enemy |
-| 14 | Spawn yellow creep when damaging an enemy |
-| 15 | Spawn red creep when damaging an enemy |
-| 16 | Spawn blue creep when damaging an enemy |
-| 17 | Spawn a pentagram when damaging an enemy |
-| 18 | Consumes pickups to gain more damage |
+| 0 | 攻击敌人时生成爆炸 |
+| 1 | 随机效果 |
+| 2 | 多个locust表现为一个（？）- 用于生成多个locust的物品 |
+| 3 | 命中时重骰敌人 |
+| 4 | 攻击敌人时对全房间敌人造成伤害 |
+| 5 | 攻击敌人时抹除该敌人类型 |
+| 6 | locust攻击时周围有刀环绕 |
+| 7 | 尖叫，对周围敌人造成伤害 |
+| 8 | 生成Maw of the void黑洞环 |
+| 9 | 蓄力时获得弹幕驱散光环 |
+| 10 | 攻击敌人时生成毒屁 |
+| 11 | 攻击敌人时生成普通屁 |
+| 12 | 攻击敌人时生成反重力硫磺火 |
+| 13 | 攻击敌人时生成绿色水迹 |
+| 14 | 攻击敌人时生成黄色水迹 |
+| 15 | 攻击敌人时生成红色水迹 |
+| 16 | 攻击敌人时生成蓝色水迹 |
+| 17 | 攻击敌人时生成五芒星 |
+| 18 | 吸收拾取物提升伤害 |

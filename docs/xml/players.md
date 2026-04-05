@@ -2,44 +2,44 @@
 tags:
   - File
 ---
-# File "players.xml"
+# 文件 "players.xml"
 
-This page needs some content. You can contribute to it using the Edit Button!
+本页面需要补充内容。你可以使用编辑按钮进行贡献！
 
-**Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.
+**Resource-Folder**{: .xmlInfo .red}：在模组的resource文件夹中使用此文件会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .green }: Using this file in a content folder will add new characters.
+**Content-Folder**{: .xmlInfo .green }：在content文件夹中使用会添加新角色。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|name|string|Name of the character (has to match the one in CharacterMenu.anm2)|
-|skin|string|Path of the character spritesheet|
-|skinColor|int|Default skin color of the character (-1 = all, 0 = white, 1 = black, 2 = blue, 3 = red, 4 = green, 5 = grey)|
-|nameimage|string|Name for vs. screen|
-|portrait|string|Portrait for the vs. screen|
-|extraportrait|string|.anm2 file that will be displayed on the vs. screen alongside the defined image in the "portrait" attribute|
-|hp|int|Starting red health (1 = half heart)|
-|armor|int|Starting soul hearts (1 = half soul heart)|
-|black|int|Starting  black hearts (1 = half black heart)|
-|items|int|Starting item ID (can separate with a comma to add more than one)|
-|trinket|int|Starting trinket ID|
+|name|string|角色名称（需与CharacterMenu.anm2中的一致）|
+|skin|string|角色spritesheet路径|
+|skinColor|int|角色默认皮肤色（-1=全部，0=白，1=黑，2=蓝，3=红，4=绿，5=灰）|
+|nameimage|string|vs界面用名称图片|
+|portrait|string|vs界面用立绘|
+|extraportrait|string|vs界面上与portrait属性图片一同显示的.anm2文件|
+|hp|int|初始红心（1=半颗心）|
+|armor|int|初始魂心（1=半颗魂心）|
+|black|int|初始黑心（1=半颗黑心）|
+|items|int|初始物品ID（用逗号分隔可添加多个）|
+|trinket|int|初始饰品ID|
 |costume|int||
-|costumeSuffix|string|Equal to the suffix of a directory to use for character-specific costumes. For example, The Forgotten's costumeSuffix is `_forgotten`, which means that his corresponding directory is located at `C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\resources-dlc3\gfx\characters\costumes_forgotten`.|
-|bombs|int|Starting bombs|
-|keys|coins|Starting keys|
-|coins|int|Starting coins|
-|card|int|Starting card ID|
+|costumeSuffix|string|角色专属costume目录的后缀。例如The Forgotten的costumeSuffix为`_forgotten`，其目录为`C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\resources-dlc3\gfx\characters\costumes_forgotten`。|
+|bombs|int|初始炸弹数|
+|keys|coins|初始钥匙数|
+|coins|int|初始金币数|
+|card|int|初始卡牌ID|
 |pill|int||
-|canShoot|bool|False = blindfolded|
-|achievement|int|Tie the character to a vanilla achievement|
-|broken|int|Starting broken hearts [ ](#){: .reporplus .tooltip .badge }|
-|pocketActive|int|Starting pocket active item ID [ ](#){: .reporplus .tooltip .badge }|
-|birthright|string|Message when picking up Birthright [ ](#){: .reporplus .tooltip .badge }|
-|bSkinParent|string|Name of the normal version of your tainted character [ ](#){: .reporplus .tooltip .badge }|
-|hidden|bool|True = the character won't appear in the selection screen [ ](#){: .reporplus .tooltip .badge }|
+|canShoot|bool|False=蒙眼|
+|achievement|int|与原版成就绑定的角色|
+|broken|int|初始破碎心数量[ ](#){: .reporplus .tooltip .badge }|
+|pocketActive|int|初始pocket主动道具ID[ ](#){: .reporplus .tooltip .badge }|
+|birthright|string|拾取Birthright时的提示信息[ ](#){: .reporplus .tooltip .badge }|
+|bSkinParent|string|你的tainted角色对应的普通角色名称[ ](#){: .reporplus .tooltip .badge }|
+|hidden|bool|True=该角色不会出现在选择界面[ ](#){: .reporplus .tooltip .badge }|
 
 
-Example of a players.xml file:
+players.xml 文件示例：
 ```xml
 <players root="gfx/characters/costumes/"
          portraitroot="gfx/ui/boss/"

@@ -2,15 +2,15 @@
 tags:
   - File
 ---
-# File "fortunes.txt"
+# 文件 "fortunes.txt"
 
-This file is used to store all "fortunes" displayed when using the "Fortune Machine" or similar.
+此文件用于存储所有在“预言机”或类似装置中显示的“签文”。
 
-Fortunes-entries can have up to 3 rows and should be seperated with an empty line.
+每条签文最多可有3行，签文之间应以空行分隔。
 
 ???+ bug
-    Having more than 24 character in a row will cause the text to flow outside of the display-box.
+  每行超过24个字符会导致文本超出显示框。
 
-**Resource-Folder**{: .xmlInfo .green}: Placing this file in your mods "resource" folder will replace the original file.
+**Resource-Folder**{: .xmlInfo .green}：将此文件放入你的模组 "resource" 文件夹会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .red}: Placing this file in your mods "content" folder has no effect!
+**Content-Folder**{: .xmlInfo .red}：将此文件放入你的模组 "content" 文件夹没有任何效果！

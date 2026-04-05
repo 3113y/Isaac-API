@@ -2,17 +2,17 @@
 tags:
   - File
 ---
-# File "curses.xml"
+# 文件 "curses.xml"
 
-Stores the names and ids of the available curses.
-
-
-**Resource-Folder**{: .xmlInfo .green }: Placing this file inside a mods resources folder will rename curses.
-
-**Content-Folder**{: .xmlInfo .green }: Placing this file in a content folder of a mod will add a new Curse. The new curse must be applied using lua, since it cant be encountered normally!
+存储可用诅咒的名称和ID。
 
 
-| Variable-Name | Possible Values | Description |
+**Resource-Folder**{: .xmlInfo .green }：将此文件放入模组的resources文件夹会重命名诅咒。
+
+**Content-Folder**{: .xmlInfo .green }：将此文件放入模组的content文件夹会添加一个新的诅咒。新诅咒必须通过lua应用，因为它无法正常遇到！
+
+
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|id|int|Ingame-Id of the Curse. Will be overridden by the game when file is in content folder.|
-|name|string|Name of the Curse|
+|id|int|诅咒在游戏中的ID。当文件在content文件夹时会被游戏覆盖。|
+|name|string|诅咒的名称|

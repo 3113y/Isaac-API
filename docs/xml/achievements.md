@@ -2,20 +2,20 @@
 tags:
   - File
 ---
-# File "achievements.xml"
+# 文件 "achievements.xml"
 
-This file is used to store general informations about the ingame achievements.
+此文件用于存储游戏内成就的一般信息。
 
-**Resource-Folder**{: .xmlInfo .green }: Placing this file in your mods "resource" folder will replace the original file.
+**Resource-Folder**{: .xmlInfo .green }：将此文件放入你的模组 "resource" 文件夹中将会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .red }: Placing this file in your mods "content" folder has no effect!
+**Content-Folder**{: .xmlInfo .red }：将此文件放入你的模组 "content" 文件夹中不会产生任何效果！
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|id|int|Ingame-Id of the Achievement|
-|text|string|Description|
-|gfx|string|.png file path based on the "gfxroot" attribute of the "achievements" xml root.|
-|steam_name|string|Name of achievement on Steam|
-|steam_description|string|Description (not used)|
-|steam_icon|string|Icon name of the achievement sprite for Steam.|
+|id|int|成就在游戏中的ID|
+|text|string|成就描述|
+|gfx|string|基于 "achievements" xml 根节点 "gfxroot" 属性的 .png 文件路径|
+|steam_name|string|Steam 上的成就名称|
+|steam_description|string|描述（未使用）|
+|steam_icon|string|Steam 成就图标的精灵名称|

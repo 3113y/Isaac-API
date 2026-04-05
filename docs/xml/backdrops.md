@@ -2,34 +2,34 @@
 tags:
   - File
 ---
-# File "backdrops.xml"
+# 文件 "backdrops.xml"
 
-This file is used to store informations about the backdrops and sprites used in the stages.
+此文件用于存储各个关卡中使用的backdrop和sprite的信息。
 
-old tutorial: https://www.reddit.com/r/themoddingofisaac/comments/34bhi4/backdrops_explained/
+旧教程: https://www.reddit.com/r/themoddingofisaac/comments/34bhi4/backdrops_explained/
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|id|int|ID of the stage|
-|gfx|string|.png filename of the main backdrop file|
-|walls|int|Number of wall sprites in the backdrop file|
-|wallvariants|int|Number of wall tiles per wall sprite|
-|floors|int|Number of floor sprites in the backdrop file|
-|floorvariants|int|Number of floor variants|
-|lfloorgfx|string|.png filename for special L-shape floor sprites|
-|nfloorgfx|string|.png filename for special long or narrow floor sprites|
-|props|string|Anm2 filename for props used in this stage|
-|rocks|string|.png filename for rock sprites used on that stage|
-|pit|string|.png filename for pit sprites used on that stage|
-|bridge|string|.png filename for pit sprites used on that stage|
-|door|string|.png filename for door sprites used on that stage|
-|holeinwall|string|.png filename for hole-in-wall sprites used on that stage|
-|watergfx|string|.png filename for the water sprites used on that stage|
-|waterpit|string|.png filename for water-holding pits used on that stage|
-|spikes|string|.png filename for spike sprites used on that stage|
-|reversewatergfx|boolean|Should the water gfx animation be reversed on that stage|
-|waterpitsmode|string|**Use not known yet...** Possible values: [0,1,2]|
+|id|int|关卡的ID|
+|gfx|string|主backdrop文件的.png文件名|
+|walls|int|backdrop文件中wall sprite的数量|
+|wallvariants|int|每个wall sprite包含的wall tile数量|
+|floors|int|backdrop文件中floor sprite的数量|
+|floorvariants|int|floor的变体数量|
+|lfloorgfx|string|特殊L型floor sprite的.png文件名|
+|nfloorgfx|string|特殊长型或窄型floor sprite的.png文件名|
+|props|string|本关卡使用的props的Anm2文件名|
+|rocks|string|本关卡使用的rock sprite的.png文件名|
+|pit|string|本关卡使用的pit sprite的.png文件名|
+|bridge|string|本关卡使用的bridge sprite的.png文件名|
+|door|string|本关卡使用的door sprite的.png文件名|
+|holeinwall|string|本关卡使用的hole-in-wall sprite的.png文件名|
+|watergfx|string|本关卡使用的water sprite的.png文件名|
+|waterpit|string|本关卡使用的water-holding pit的.png文件名|
+|spikes|string|本关卡使用的spike sprite的.png文件名|
+|reversewatergfx|boolean|本关卡的water gfx动画是否需要反转|
+|waterpitsmode|string|**用途尚不明确...** 可能的值: [0,1,2]|

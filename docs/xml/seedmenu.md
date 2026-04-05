@@ -2,10 +2,10 @@
 tags:
   - File
 ---
-# File "seedmenu.xml"
+# 文件 "seedmenu.xml"
 
-File that defines the display of the Easter Egg seed menu.
+定义彩蛋种子菜单显示的文件。
 
-**Resource-Folder**{: .xmlInfo .red}: Placing this file in your mods "resources" folder has no effect!
+**Resource-Folder**{: .xmlInfo .red}：将此文件放入模组的resources文件夹无效！
 
-**Content-Folder**{: .xmlInfo .red}: Placing this file in your mods "content" folder has no effect!
+**Content-Folder**{: .xmlInfo .red}：将此文件放入模组的content文件夹无效！

@@ -2,18 +2,18 @@
 tags:
   - File
 ---
-# File "bossoverlays.xml"
+# 文件 "bossoverlays.xml"
 [ ](#){: .reporplus .tooltip .badge }
 
-This page needs some content. You can contribute to it using the Edit Button!
+本页面需要补充内容。你可以使用编辑按钮进行贡献！
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
 |id|int||
-|anm2|string| Path to the .anm2 file to be used|
-|anim|string|Name of the animation to be played|
+|anm2|string|要使用的.anm2文件路径|
+|anim|string|要播放的动画名称|
 |persist|boolean||

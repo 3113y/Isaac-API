@@ -2,15 +2,15 @@
 tags:
   - File
 ---
-# File "nightmares.xml"
+# 文件 "nightmares.xml"
 
-Used to store all animation paths to the nightmares (dream sequence between stage transitions)
+用于存储所有nightmare（关卡切换间梦境动画）的anm2动画路径。
 
-**Resource-Folder**{: .xmlInfo .green }: Placing this file in a resource folder of a mod will override the original.
+**Resource-Folder**{: .xmlInfo .green }：将此文件放入模组的resource文件夹会覆盖原始文件。
 
-**Content-Folder**{: .xmlInfo .green }: Placing this file in a content folder of a mod will add new nightmares.
+**Content-Folder**{: .xmlInfo .green }：将此文件放入模组的content文件夹会添加新的nightmare。
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|anm2|string|Path to the .anm2 file of the nightmare|
+|anm2|string|nightmare的.anm2文件路径|

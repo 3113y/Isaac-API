@@ -2,16 +2,16 @@
 tags:
   - File
 ---
-# File "minibosses.xml"
+# 文件 "minibosses.xml"
 
-This file is used to store the name of the miniboss in certain miniboss-rooms. The name will be displayed on a "streak"-animation like "Isaac vs. MINIBOSS_NAME"
+此文件用于存储特定小Boss房间中小Boss的名称。该名称会在“streak”动画中显示，如“Isaac vs. MINIBOSS_NAME”。
 
-**Resource-Folder**{: .xmlInfo .green}: Placing this file in your mods "resource" folder will replace the original file.
+**Resource-Folder**{: .xmlInfo .green}：将此文件放入你的模组 "resource" 文件夹会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .red}: Placing this file in your mods "content" folder has no effect!
+**Content-Folder**{: .xmlInfo .red}：将此文件放入你的模组 "content" 文件夹没有任何效果！
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|id|int|RoomID where this streak should be triggered. The RoomID should be in increments of 10<br>**Example**: `2020`<br><br>Rooms with IDs not ending with 0 will be fitted to a possible id ending with 0. <br>**Example**: `2023` will be sorted to `2020`.|
-|name|string|Name that will be displayed in the streak animation|
+|id|int|触发该streak的房间ID。RoomID应以10为步进。<br>**示例**：`2020`<br><br>不以0结尾的ID会自动归类到以0结尾的ID。<br>**示例**：`2023`会归类到`2020`。|
+|name|string|将在streak动画中显示的名称|

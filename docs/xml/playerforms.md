@@ -2,18 +2,18 @@
 tags:
   - File
 ---
-# File "playerforms.xml"
-This file is used to define transformations.
+# 文件 "playerforms.xml"
+此文件用于定义变身（transformations）。
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
 | id | int ||
-| name | string | Internal name of the transformation |
+| name | string | 变身的内部名称 |
 | costume | int | Costume ID |
-| tags | string | Item-Tags that count towards that transformations |
-| cache | string | Cache flags that should update when this transformation is triggered |
+| tags | string | 计入该变身的物品标签 |
+| cache | string | 触发该变身时应更新的cache标志 |
