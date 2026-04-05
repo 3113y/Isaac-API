@@ -2,53 +2,53 @@
 tags:
   - File
 ---
-# File "recipes.xml"
+# 文件 "recipes.xml"
 [ ](#){: .reporplus .tooltip .badge }
 
-Stores permenant recipes for Bag of Crafting that are not affected by per-run randomization.
+用于存储Bag of Crafting（合成袋）中不受每局随机化影响的永久配方。
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo .green }: Placing this file in the content folder will allow you to define new recipes.
+**Content-Folder**{: .xmlInfo .green }：将此文件放入content文件夹可以定义新配方。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|input|string|Coded string of characters representing crafting ingredients (e.g. "bbbbbbbb") |
-|output|int|Item ID of the output|
+|input|string|代表合成材料的编码字符串（如“bbbbbbbb”）|
+|output|int|输出物品的ID|
 
-???+ note "Notes"
-    Due to the lack of a way to add recipes without using an ItemID, it is not possible to add recipes for modded items.
+???+ note "注意"
+  由于无法在不使用ItemID的情况下添加配方，因此无法为模组物品添加配方。
 
-## Known Crafting Ingredient Representations
+## 已知合成材料编码
 
-| Crafting Ingredient | Coded Representation |
+| 合成材料 | 编码表示 |
 |:--|:--|
-| Penny | "." (Period/Full Stop) |
-| Nickel | "o" |
-| Dime | "O" (Captial o) |
-| Lucky Penny | "Q" (Capital q) |
-| Golden Penny | "$" (Dollar) |
-| Bomb | "v" |
-| Golden Bomb | "^" (Caret) |
-| Giga Bomb | "V" (Capital v)
-| Poop Nugget | "\_" (Underscore) |
-| Key | "/" (Forward Slash)
-| Golden Key | "\|" (Pipe) |
-| Charged Key | "%" (Percentage) |
-| Red Heart | "h" |
-| Rotten Heart | "r" |
-| Soul Heart | "s" |
-| Black Heart | "b" |
-| Bone Heart | "B" (Captial b) |
-| Golden Heart | "g" |
-| Eternal Heart | "e" |
-| Micro Battery | "1" |
-| Lil' Battery | "2" |
-| Mega Battery | "3" |
-| Golden Battery | "4" |
-| Pill | "(" (Open Bracket) |
-| Golden Pill | "{" (Open Curly Bracket) |
-| Card | "\[" (Open Square Bracket) |
-| Rune | ">" (Greater Than) |
-| Dice Shard | "?" (Question Mark) |
-| Cracked Key | "~" (Tilde) |
+| 硬币 | "."（句号）|
+| 五分币 | "o" |
+| 十分币 | "O"（大写o）|
+| 幸运币 | "Q"（大写q）|
+| 金币 | "$"（美元符号）|
+| 炸弹 | "v" |
+| 金炸弹 | "^"（插入符号）|
+| Giga炸弹 | "V"（大写v）|
+| 粪块 | "_"（下划线）|
+| 钥匙 | "/"（斜杠）|
+| 金钥匙 | "|"（竖线）|
+| 充能钥匙 | "%"（百分号）|
+| 红心 | "h" |
+| 腐烂心 | "r" |
+| 魂心 | "s" |
+| 黑心 | "b" |
+| 骨心 | "B"（大写b）|
+| 金心 | "g" |
+| 永恒心 | "e" |
+| 微型电池 | "1" |
+| 小电池 | "2" |
+| 大电池 | "3" |
+| 金电池 | "4" |
+| 药丸 | "("（左括号）|
+| 金药丸 | "{"（左大括号）|
+| 卡牌 | "["（左中括号）|
+| 符文 | ">"（大于号）|
+| 骰子碎片 | "?"（问号）|
+| 裂钥匙 | "~"（波浪号）|

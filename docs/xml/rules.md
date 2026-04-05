@@ -2,15 +2,15 @@
 tags:
   - File
 ---
-# File "rules.txt"
+# 文件 "rules.txt"
 
-This file is used to store all "rules" displayed when using the "Rules" card.
+此文件用于存储在使用“Rules”卡牌时显示的所有“规则”内容。
 
-Rule-entries can have up to 3 rows and should be seperated with an empty line.
+每条规则最多可有3行，规则之间需用空行分隔。
 
 ???+ bug
-    Having more than 24 character in a row will cause the text to flow outside of the display-box.
+  每行超过24个字符会导致文本溢出显示框。
 
-**Resource-Folder**{: .xmlInfo .green}: Placing this file in your mods "resource" folder will replace the original file.
+**Resource-Folder**{: .xmlInfo .green}：将此文件放入模组的resource文件夹会替换原版文件。
 
-**Content-Folder**{: .xmlInfo .red}: Placing this file in your mods "content" folder has no effect!
+**Content-Folder**{: .xmlInfo .red}：将此文件放入模组的content文件夹无效！

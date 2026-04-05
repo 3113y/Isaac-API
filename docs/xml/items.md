@@ -2,80 +2,80 @@
 tags:
   - File
 ---
-# File "items.xml"
+# 文件 "items.xml"
 
-old tutorial: [https://www.reddit.com/r/themoddingofisaac/comments/3mub9c/ways_to_modify_items/](https://www.reddit.com/r/themoddingofisaac/comments/3mub9c/ways_to_modify_items/)
+旧教程: [https://www.reddit.com/r/themoddingofisaac/comments/3mub9c/ways_to_modify_items/](https://www.reddit.com/r/themoddingofisaac/comments/3mub9c/ways_to_modify_items/)
 
-**Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.
+**Resource-Folder**{: .xmlInfo .red}：在模组的resource文件夹中使用此文件会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .green}: Using this file in a content folder of a mod will add new items.
+**Content-Folder**{: .xmlInfo .green}：在模组的content文件夹中使用此文件会添加新物品。
 
 
-| Variable Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| id | int | Used for associating costumes and death-portrait/collection-page sprites with an item. |
-| cache | string | Possible values : [firedelay, damage, speed, range, tearcolor, tearflag, color, size. shotspeed, all, luck, flying, weapon, familiars]. |
+| id | int | 用于将costume和死亡肖像/收集页面sprite与物品关联。 |
+| cache | string | 可选值: [firedelay, damage, speed, range, tearcolor, tearflag, color, size, shotspeed, all, luck, flying, weapon, familiars]。|
 | name | string |  |
 | description | string |  |
-| gfx | string | Path to the item image. Must be a .png saved at a bit-depth of 32 bits. |
-| tags | string | Multiple tags must be separated with a space; see below for possible values and descriptions. |
+| gfx | string | 物品图片路径。必须为32位深度的.png文件。 |
+| tags | string | 多个标签需用空格分隔，见下方可用值及说明。 |
 | bombs | int |  |
 | keys | int |  |
 | coins | int |  |
-| hearts | int | Distinct from MaxHearts, must be granted alongside MaxHearts in order to grant filled heart containers. |
+| hearts | int | 与MaxHearts不同，必须与MaxHearts一起赋值才能获得填充的心容器。 |
 | soulhearts | int |  |
 | blackhearts | int |  |
-| maxhearts | int | Number of added empty heart containers. |
-| maxcharges | int | When chargetype is set to `timed`, this attribute is used to define the cooldown of the item in frames. |
-| chargetype | string | Possible values: [normal, timed, special]|
-| cooldown | int | Number of frames until this item's associated CollectibleEffect is auto-removed if granted. CollectibleEffects are automatically granted by active items on use. |
-| passivecache | bool | Calls a cache evaluation when picked up (used for acive items, e.g. Mom's Box). |
+| maxhearts | int | 增加的空心之容器数量。 |
+| maxcharges | int | 当chargetype为`timed`时，此属性用于定义物品的冷却帧数。 |
+| chargetype | string | 可选值: [normal, timed, special]|
+| cooldown | int | 该物品关联的CollectibleEffect在被授予后自动移除前的帧数。CollectibleEffect会在主动物品使用时自动授予。 |
+| passivecache | bool | 拾取时调用cache评估（用于主动物品，如Mom's Box）。 |
 | special | bool |  |
-| initcharge | int | How many charges should this active item have when first picked up (e.g. Everything Jar[ ](#){: .reporplus .tooltip .badge }). |
-| devilprice | int | Possible values: ['1','2'] |
+| initcharge | int | 该主动物品首次拾取时应有的初始充能（如Everything Jar[ ](#){: .reporplus .tooltip .badge }）。 |
+| devilprice | int | 可选值: ['1','2'] |
 | shopprice | int |  |
 | addcostumeonpickup | bool |  |
-| persistent | bool | Determines whether the item's associated CollectibleEffect is retained when transitioning between rooms, or across save & continue. CollectibleEffects are automatically granted by active items on use. False by default. |
-| achievement | int | Ties the item to be unlocked by a vanilla achievement. |
-| quality | int | Possible values: ['0', '1', '2', '3', '4']. |
-| craftquality | int | Possible values: ['-1', '0', '1', '2', '3', '4']. A value of -1 prevents this item from appearing in Bag of Crafting. |
-| hidden | bool | Prevents the item from appearing in Death Certificate, or on the collection menu (e.g. Familiar-ItemType Damocles). |
-| cleareffectsonremove | bool | Clears any effects of the item upon removal. Note: This is currently not used by any vanilla item. |
+| persistent | bool | 决定物品关联的CollectibleEffect在房间切换或存档继续时是否保留。CollectibleEffect会在主动物品使用时自动授予。默认false。 |
+| achievement | int | 该物品与原版成就解锁绑定。 |
+| quality | int | 可选值: ['0', '1', '2', '3', '4']。 |
+| craftquality | int | 可选值: ['-1', '0', '1', '2', '3', '4']。为-1时该物品不会出现在Bag of Crafting中。 |
+| hidden | bool | 防止该物品出现在死亡证明或收集菜单中（如达摩克里斯之剑类型的跟班物品）。 |
+| cleareffectsonremove | bool | 移除物品时清除其效果。注意：目前原版物品未使用此属性。 |
 
-## Tags Documentation
+## 标签文档
 
-| Tag Name | Description |
+| 标签名 | 说明 |
 |:--|:--|
-| dead | Dead things (for the Parasite unlock) |
-| syringe | Syringes (for Little Baggy and the Spun! transformation) |
-| mom | Mom's things (for Mom's Contact and the Yes Mother? transformation) |
-| tech | Technology items (for the Technology Zero unlock) |
-| battery | Battery items (for the Jumper Cables unlock) |
-| guppy | Guppy items (Guppy transformation) |
-| fly | Fly items (Beelzebub transformation) |
-| bob | Bob items (Bob transformation) |
-| mushroom | Mushroom items (Fun Guy transformation) |
-| baby | Baby items (Conjoined transformation) |
-| angel | Angel items (Seraphim transformation) |
-| devil | Devil items (Leviathan transformation) |
-| poop | Poop items (Oh Shit transformation) |
-| book | Book items (Book Worm transformation) |
-| spider | Spider items (Spider Baby transformation) |
-| quest | Quest item (cannot be rerolled or randomly obtained) |
-| monstermanual | Can be spawned by Monster Manual |
-| nogreed | Cannot appear in Greed Mode |
-| food | Food item (for Binge Eater) |
-| tearsup | Tears up item (for Lachryphagy unlock detection) |
-| offensive | Whitelisted item for Tainted Lost |
-| nokeeper | Blacklisted item for Keeper/Tainted Keeper |
-| nolostbr | Blacklisted item for Lost's Birthright |
-| stars | Star themed items (for the Planetarium unlock) |
-| summonable | Summonable items (for Lemegeton) |
-| nocantrip | Can't be obtained in Cantripped challenge |
-| wisp | Active items that have wisps attached to them (automatically set) |
-| uniquefamiliar | Unique familiars that cannot be duplicated |
-| nochallenge | Items that shouldn't be obtainable in challenges |
-| nodaily | Items that shouldn't be obtainable in daily runs (since you can't have modded items in daily runs, this tag isn't neccessary) |
-| lazarusshared | Items that should be shared between Tainted Lazarus' forms |
-| lazarussharedglobal | Items that should be shared between Tainted Lazarus' forms but only through global checks (such as EntityPlayer:HasCollectible) |
-| noeden | Items that can't be randomly rolled |
+| dead | 死亡类物品（用于寄生虫的解锁） |
+| syringe | 注射器类物品（用于小药袋解锁和 针套装） |
+| mom | 妈妈类物品（用于妈妈的美瞳解锁和 妈妈套装） |
+| tech | 科技类物品（用于科技零解锁） |
+| battery | 电池类物品（用于跨接电缆解锁） |
+| guppy | 猫类物品（猫套装） |
+| fly | 苍蝇类物品（苍蝇套装） |
+| bob | Bob类物品（鲍勃套装） |
+| mushroom | 蘑菇类物品（蘑菇套装） |
+| baby | 宝宝类物品（宝宝套装） |
+| angel | 天使类物品（天使套装） |
+| devil | 恶魔类物品（恶魔套装） |
+| poop | 屎类物品（大便套装） |
+| book | 书本类物品（书套装） |
+| spider | 蜘蛛类物品（蜘蛛套装） |
+| quest | 任务物品（不可重骰或随机获得） |
+| monstermanual | 可由怪物手册生成 |
+| nogreed | 不会出现在贪婪模式 |
+| food | 食物类物品（用于大胃王） |
+| tearsup | 提升射速的物品（用于食泪症解锁） |
+| offensive | 堕化游魂白名单物品 |
+| nokeeper | 店长/堕化店长黑名单物品 |
+| nolostbr | 游魂的长子名分黑名单物品 |
+| stars | 星星类物品（用于星象房解锁） |
+| summonable | 可召唤物品（用于所罗门魔典） |
+| nocantrip | 无法在大量过牌！挑战中获得 |
+| wisp | 带有灵火的主动物品（自动设置） |
+| uniquefamiliar | 独特跟班，无法复制 |
+| nochallenge | 不应在挑战中获得的物品 |
+| nodaily | 不应在每日挑战中获得的物品（因每日挑战无法获得mod物品，此标签一般无用） |
+| lazarusshared | 堕化拉撒路双形态间共享的物品 |
+| lazarussharedglobal | 仅通过全局检测（如EntityPlayer:HasCollectible）在堕化拉撒路双形态间共享的物品 |
+| noeden | 无法被随机重骰获得的物品 |

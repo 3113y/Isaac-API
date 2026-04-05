@@ -2,26 +2,26 @@
 tags:
   - File
 ---
-# File "bosscolors.xml"
+# 文件 "bosscolors.xml"
 
-This file is used to store all valid champion bosses. Effects of champion bosses are hardcoded, so this file defines only color, scale and HP multiplier of the boss.
+此文件用于存储所有有效的Boss变体。变体Boss的效果是硬编码的，因此本文件只定义Boss的颜色、缩放比例和生命值倍率。
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
-## "boss" Tag
+## "boss" 标签
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|id|int|Ingame-Id of the Boss.|
-|variant|int|Ingame-Variant of the Boss.|
+|id|int|Boss在游戏中的ID。|
+|variant|int|Boss在游戏中的变体。|
 
-## "color" Tag
+## "color" 标签
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|idx|int|Boss's color. Possible values: 1-Red, 2-Pale, 3-Green, 4-Cyan, 5-Green, 6-Orange, 7-Blue, 8-Cyan, 9-Orange, 10-?, 11-Dark Greyish Green, 12-Yellow, 13-Dark Cyan, 14-Red, 15-Dark Grey, 16-Dark Grey, 17-Pale Grey, 18-Black, 19-Red, 20-Pink, 21-Golden, 22-Pink, 23-Brown|
-|scale|float|Boss's scale is multiplied by this number.|
-|hp|float|Boss's health is multiplied by this number.|
-|anm2path|string|Path to a specific anm2 file that should be used instead of coloring the boss automatically|
+|idx|int|Boss的颜色。可能的值：1-红色，2-苍白，3-绿色，4-青色，5-绿色，6-橙色，7-蓝色，8-青色，9-橙色，10-？，11-深灰绿色，12-黄色，13-深青色，14-红色，15-深灰色，16-深灰色，17-浅灰色，18-黑色，19-红色，20-粉色，21-金色，22-粉色，23-棕色|
+|scale|float|Boss的缩放比例会乘以该数值。|
+|hp|float|Boss的生命值会乘以该数值。|
+|anm2path|string|指定的anm2文件路径，将替代自动上色Boss的方式|

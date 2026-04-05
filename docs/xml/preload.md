@@ -2,15 +2,15 @@
 tags:
   - File
 ---
-# File "preload.xml"
+# 文件 "preload.xml"
 
-This page needs some content. You can contribute to it using the Edit Button!
+本页面需要补充内容。你可以使用编辑按钮进行贡献！
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
 |*todo*|||

@@ -2,43 +2,43 @@
 tags:
   - File
 ---
-# File "itempools.xml"
+# 文件 "itempools.xml"
 
-This page needs some content. You can contribute to it using the Edit Button!
+本页面需要补充内容。你可以使用编辑按钮进行贡献！
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| Id | int | *(Optional)*<br> The id of the item in the itempool<br> When using this variable, you can't use the "name" variable.|
-| Name | String | *(Optional, recommended)* The name of the item in the itempool.<br> When using this variable, you can't use the "id" variable. |
-| Weight | float | Relative "likelyhood" that this item can be drawn from the pool. `Default = 1` . If this value reaches the "RemoveOn" value, the item will no longer be drawn from the pool|
-| DecreaseBy | float | Value on how often the item can be drawn from the pool. `Default = 1`<br>Everytime an item is drawn from the pool, this value is substracted from its Weight. This makes the item appear less likely on reroll till the weight reaches the "RemoveOn" value.|
-| RemoveOn | float | Value on which Weight value the item is no longer able to be drawn from the pool. `Default = "0.1"`|
+| Id | int | *(可选)*<br> itempool中物品的id<br>使用此变量时不能使用"name"变量。|
+| Name | String | *(可选，推荐)* itempool中物品的名称。<br>使用此变量时不能使用"id"变量。 |
+| Weight | float | 该物品从池中被抽取的相对“概率”。`默认=1`。如果该值达到"RemoveOn"，该物品将不再被抽取。|
+| DecreaseBy | float | 物品可被抽取的次数。`默认=1`<br>每次物品被抽取时，该值会从其Weight中减去。这样在重骰时该物品出现概率会降低，直到weight达到"RemoveOn"。|
+| RemoveOn | float | 当Weight达到该值时，物品将不再能被抽取。`默认="0.1"`|
 
-## Item count calculation
-The amount on how often an item will be in the itempool is determined with the following equation:
+## 物品出现次数计算
+物品在itempool中出现的次数由以下公式决定：
 ```lua
 math.ceil( ( Weight - RemoveOn ) / DecreaseBy )
 ```
-( `math.ceil` rounds a number to the next biggest integer )
+（`math.ceil` 会将数字向上取整）
 
-## Example
+## 示例
 
-???+ example "Example Code"
-    This code describes an item pool with 3 items in it.
+???+ example "示例代码"
+    下面的代码描述了一个包含3个物品的itempool。
 
     ```xml
     <ItemPools>
         <Pool Name="myItempool">
-                <!--The Sad Onion --- 1 times in the Pool-->
+                <!--The Sad Onion --- 池中出现1次-->
             <Item Id="1" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-                <!--The Inner Eye --- 5 times in the Pool (10-1)/2 = 4.5 => 5 -->
+                <!--The Inner Eye --- 池中出现5次 (10-1)/2 = 4.5 => 5 -->
             <Item Id="2" Weight="11" DecreaseBy="2" RemoveOn="1"/>
-                 <!--Spoon Bender --- 4 times in the pool (1-0.1)/0.25 = 3.6 => 4 -->
+                 <!--Spoon Bender --- 池中出现4次 (1-0.1)/0.25 = 3.6 => 4 -->
             <Item Id="3" Weight="1" DecreaseBy="0.25" RemoveOn="0.1"/>
         </Pool>
     </ItemPools>

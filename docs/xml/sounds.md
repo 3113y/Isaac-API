@@ -2,43 +2,43 @@
 tags:
   - File
 ---
-# File "sounds.xml"
+# 文件 "sounds.xml"
 
-This file is used to store informations about the Soundeffect used in the game.
+此文件用于存储游戏中使用的音效信息。
 
-old tutorial: [https://www.reddit.com/r/themoddingofisaac/comments/3ebqat/all_about_music_soundfiles/](https://www.reddit.com/r/themoddingofisaac/comments/3ebqat/all_about_music_soundfiles/)
+旧教程：[https://www.reddit.com/r/themoddingofisaac/comments/3ebqat/all_about_music_soundfiles/](https://www.reddit.com/r/themoddingofisaac/comments/3ebqat/all_about_music_soundfiles/)
 
-**Resource-Folder**{: .xmlInfo .green}: Placing this file in your mods "resource" folder will replace the original file.
+**Resource-Folder**{: .xmlInfo .green}：将此文件放入模组的resource文件夹会替换原版文件。
 
-**Content-Folder**{: .xmlInfo .green}: Placing this file in your mods "content" folder will add new sound effects.
+**Content-Folder**{: .xmlInfo .green}：将此文件放入模组的content文件夹会添加新的音效。
 
 
-## "sound" node
-| Variable-Name | Possible Values | Description |
+## "sound" 节点
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|name|string|Name of the Sound effect|
+|name|string|音效名称|
 
-## "sample" node
-Child-node of the "sound" node. Multiple "sample" nodes can be added to a "sound" node, resulting in a random selection of them when playing.
+## "sample" 节点
+“sound”节点的子节点。一个“sound”节点可以包含多个“sample”节点，播放时会随机选择其中一个。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|weight|float|Weight of the sound-effect when choosen by random.<br>Lower number = less likely|
-|path|string|filepath to the .wav file|
+|weight|float|被随机选中时的权重。<br>数值越小，被选中的概率越低|
+|path|string|.wav 文件的路径|
 
 
-## Informations
-Its only possible to define ".wav" files as sound effects. The file must be encoded in 16-bit, otherwise it will sound like high-pitched static noise. The Bitrate and audio-channel options can be choosen freely.
+## 说明
+只能将“.wav”文件定义为音效。文件必须为16位编码，否则会出现高频杂音。比特率和声道数可自由选择。
 
-# File Conversions
-For an easy conversion from any audio-format to the needed ".wav" format, you can use a lot of software tools for editing sound files.
+# 文件转换
+要将任意音频格式轻松转换为所需的“.wav”格式，可以使用许多音频编辑软件。
 
-As an online alternative, you can also use websites like [convertio.co](https://convertio.co/mp3-wav/). **Make sure you save the files as 16-bit (example Codec: "PCM_S16LE (Uncompressed)").**
+也可以使用如 [convertio.co](https://convertio.co/mp3-wav/) 这样的网站进行在线转换。**请确保保存为16位（示例Codec: "PCM_S16LE (Uncompressed)"）。**
 
-## Example
+## 示例
 
-???+ example "Example Code"
-    This code adds two sound effects. One with a single sound, and another one with 3 possible sounds choosen by random.
+???+ example "示例代码"
+    此代码添加了两个音效。一个为单一音效，另一个为包含3个可随机选择音效的组合。
 
     ```xml
     <sounds root="sounds/">

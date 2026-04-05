@@ -1,2 +1,2 @@
-# XML-File Documentations
-The game uses .XML files to store alot of ingame contents in an easily readable and editable format.
+# XML文件文档
+游戏使用.XML文件以易于阅读和编辑的格式存储大量游戏内容。

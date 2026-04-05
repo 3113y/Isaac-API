@@ -2,76 +2,77 @@
 tags:
   - File
 ---
-# File "entities2.xml"
+# 文件 "entities2.xml"
 
-This page needs some content. You can contribute to it using the Edit Button!
+本页面需要补充内容。你可以使用编辑按钮进行贡献！
 
-old tutorial: [https://www.reddit.com/r/themoddingofisaac/comments/36o00t/entitys_explained_how_to_add_entity_variants/](https://www.reddit.com/r/themoddingofisaac/comments/36o00t/entitys_explained_how_to_add_entity_variants/)
+旧教程: [https://www.reddit.com/r/themoddingofisaac/comments/36o00t/entitys_explained_how_to_add_entity_variants/](https://www.reddit.com/r/themoddingofisaac/comments/36o00t/entitys_explained_how_to_add_entity_variants/)
 
-**Resource-Folder**{: .xmlInfo }: Using this file in a resource folder of a mod is not tested yet.
+**Resource-Folder**{: .xmlInfo }：在模组的resource文件夹中使用此文件尚未经过测试。
 
-**Content-Folder**{: .xmlInfo }: Using this file in a content folder of a mod is not tested yet.
+**Content-Folder**{: .xmlInfo }：在模组的content文件夹中使用此文件尚未经过测试。
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
 | name | str ||
-| id | int | Type of the entity. Max Value: 4095 |
-| variant | int | Variant of the entity. The maximum value is 4095. If you leave this blank, then the game will automatically chose the next available number. |
-| subtype | int | SubType of the entity. The maximum value is 255. (The reason for this is that the hash map generator of the .stb format expects a specific bit-depth.) |
-| anm2path | string | path to the anm2 file, relative to the given anm2root. Example: `001.000_Player.anm2` |
+| id | int | 实体类型。最大值：4095 |
+| variant | int | 实体的变体。最大值为4095。如果留空，游戏会自动选择下一个可用编号。 |
+| subtype | int | 实体的SubType。最大值为255。（原因是.stb格式的哈希表生成器需要特定位深。） |
+| anm2path | string | anm2文件的路径，相对于给定的anm2root。例如：`001.000_Player.anm2` |
 | baseHP | int ||
-| boss | int |Entity is a boss. Possible values: ['0', '1'] |
+| boss | int |是否为Boss。可选值：['0', '1'] |
 | bossID | int ||
-| champion | int |Allow champion variants of this entity. Possible values: ['0', '1'] |
+| champion | int |是否允许该实体有精英变体。可选值：['0', '1'] |
 | collisionDamage | float ||
 | collisionMass | float ||
-| collisionRadius | float | Radius of the collision circle. This value is used for both entity <--> entity and entity <--> grid collisions. This changes the `Entity.Size` field. |
-| collisionRadiusXMulti | float | Multiplier for the X direction of the collision circle. This can be used to grant an entity an elliptical hitbox |
-| collisionRadiusYMulti | float | Multiplier for the Y direction of the collision circle. This can be used to grant an entity an elliptical hitbox |
-| collisionInterval | int | Number of game ticks till the next collision should be evaluated. Default = 1 |
-| numGridCollisionPoints | int | Number of points along the edge of the collision circle, which are used to detect collisions with grid entities. |
-| friction | float | "Slippyness" of the entity. Default = 1. Lower values make them slide more, similar as they would standing on ice. Higher values make them slide less. A value of 0 makes them unable to move. |
+| collisionRadius | float | 碰撞圆的半径。用于实体<-->实体和实体<-->地形的碰撞。这会改变`Entity.Size`字段。 |
+| collisionRadiusXMulti | float | 碰撞圆X方向的缩放。可用于实现椭圆形碰撞箱 |
+| collisionRadiusYMulti | float | 碰撞圆Y方向的缩放。可用于实现椭圆形碰撞箱 |
+| collisionInterval | int | 下次碰撞检测前的游戏帧数。默认=1 |
+| numGridCollisionPoints | int | 碰撞圆边缘用于检测与地形碰撞的点数。 |
+| friction | float | 实体的“滑溜度”。默认=1。值越低越滑，类似在冰上。值越高越不滑。为0时无法移动。 |
 | shadowSize | float ||
 | stageHP | int ||
-| tags | string | possible values: ['nodelirium', 'spider', 'explosive_soul', 'cansacrifice', 'ghost', 'brimstone_soul', 'homing_soul', 'fly', 'noreroll']<br>See Chapter below for in depth explanations of the tags. |
-| gridCollision | string | possible values: ['nopits', 'ground', 'none', 'walls', 'floor'] |
+| tags | string | 可选值：['nodelirium', 'spider', 'explosive_soul', 'cansacrifice', 'ghost', 'brimstone_soul', 'homing_soul', 'fly', 'noreroll']<br>详见下方标签说明章节。 |
+| gridCollision | string | 可选值：['nopits', 'ground', 'none', 'walls', 'floor'] |
 | portrait | int ||
-| hasFloorAlts | bool | If set to true, floor specific sprites should be used for this entity if they exist. See the chapter below for more informations |
+| hasFloorAlts | bool | 若为true，则该实体会使用特定楼层的sprite（如存在）。详见下方章节。 |
 | reroll | bool ||
 | shutdoors | bool ||
 | shieldStrength | int ||
 | gibAmount | int ||
-| gibFlags | string | used Values: ['poop'] |
+| gibFlags | string | 可用值：['poop'] |
 | bestiaryAnim | string ||
 | bestiaryOverlay | string ||
 
-## Tags explanation
+## 标签说明
 
-| Stage-Name | Suffix |
+| 标签名 | 说明 |
 |:--|:--|
-|cansacrifice| Marks familiars on which sacrificial altar can be used on|
-|nodelirium| Blacklists a boss from being used by Delirium|
-|fly|Indicates enemies which should be neutralized by Skatole (does NOT affect Beelzebub)|
-|spider|Indicates enemies which should be neutralized by Bursting Sack|
-|ghost|Indicates enemies which Vade Retro can kill at <50% HP as a special interaction|
-|noreroll| Immunity from D10 rerolls and the Ace cards|
-|brimstone_soul| Friendly Ball wisps created by this enemy will fire Brimstone lasers|
-|explosive_soul| Friendly Ball wisps created by this enemy will fire explosive tears|
-|homing_soul| Friendly Ball wisps created by this enemy will fire homing tears|
+|cansacrifice| 标记可用于献祭祭坛的跟班|
+|nodelirium| 该Boss不会被精神错乱选中变化|
+|fly|被粪臭素友好化的敌人（不影响别西卜套装）|
+|spider|被爆裂虫卵友好化的敌人|
+|ghost|驱魔护符可在<50%血量时特殊击杀的敌人|
+|noreroll| 免疫D10重骰和Ace卡牌|
+|brimstone_soul| 该敌人生成的友好球灵火会发射细长鲜血激光柱|
+|explosive_soul| 该敌人生成的友好球灵火会发射爆炸泪弹|
+
+|homing_soul| 该敌人生成的友好球灵火会发射追踪泪弹|
 
 
-## Floor specific sprites
-If an entity has the attribute `hasFloorAlts` set to `true`, the game tries to load the spritesheet of the entity with an additional suffix, based on the current stage. The Suffix of a stage is defined in the `suffix` attribute in the stages.xml file. If no sprite can be found, it will load the default spritesheet.
+## 楼层专属sprite
+如果实体的 `hasFloorAlts` 属性为 `true`，游戏会尝试根据当前关卡为该实体加载带有额外后缀的spritesheet。关卡的后缀由 stages.xml 文件中的 `suffix` 属性定义。如果找不到对应sprite，则加载默认spritesheet。
 
-**Example:**
-Original Gaper sprite: monster_017_gaper.png
+**示例：**
+原始Gaper sprite：monster_017_gaper.png
 
-Downpour Sprite: monster_017_gaper_downpour.png
+Downpour楼层sprite：monster_017_gaper_downpour.png
 
-**Suffix per stage:**
+**各楼层后缀：**
 
-| Stage-Name | Suffix |
+| 楼层名称 | 后缀 |
 |:--|:--|
 |Flooded Caves|_downpour|
 |Downpour|_downpour|
@@ -80,25 +81,25 @@ Downpour Sprite: monster_017_gaper_downpour.png
 |Mausoleum|_mausoleum|
 |Gehenna|_gehenna|
 
-## `<gibs>` tag
-the `<gibs>` tag is used to define the gibs that are spawned when an entity is killed or destroyed.
+## `<gibs>` 标签
+`<gibs>` 标签用于定义实体被击杀或销毁时生成的gibs。
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-| amount | int | How many gibs should be spawned|
-| blood | int | Possible values: [0,1] where 0 is off and 1 is on|
-| bone | int |Possible values: [0,1] where 0 is off and 1 is on|
-| chain | int |Possible values: [0,1] where 0 is off and 1 is on|
-| colorblood | int |Possible values: [0,1] where 0 is off and 1 is on|
-| dust | int |Possible values: [0,1] where 0 is off and 1 is on|
-| eye | int |Possible values: [0,1] where 0 is off and 1 is on|
-| gut | int |Possible values: [0,1] where 0 is off and 1 is on|
-| huge | int |Possible values: [0,1] where 0 is off and 1 is on|
-| large | int |Possible values: [0,1] where 0 is off and 1 is on|
-| poop | int |Possible values: [0,1] where 0 is off and 1 is on|
-| rock | int |Possible values: [0,1] where 0 is off and 1 is on|
-| rock_small | int |Possible values: [0,1] where 0 is off and 1 is on|
-| small | int |Possible values: [0,1] where 0 is off and 1 is on|
-| sound_baby | int |Possible values: [0,1] where 0 is off and 1 is on|
-| sound_bone | int |Possible values: [0,1] where 0 is off and 1 is on|
-| worm | int |Possible values: [0,1] where 0 is off and 1 is on|
+| amount | int | 生成gibs的数量|
+| blood | int | 可选值: [0,1]，0为关闭，1为开启|
+| bone | int |可选值: [0,1]，0为关闭，1为开启|
+| chain | int |可选值: [0,1]，0为关闭，1为开启|
+| colorblood | int |可选值: [0,1]，0为关闭，1为开启|
+| dust | int |可选值: [0,1]，0为关闭，1为开启|
+| eye | int |可选值: [0,1]，0为关闭，1为开启|
+| gut | int |可选值: [0,1]，0为关闭，1为开启|
+| huge | int |可选值: [0,1]，0为关闭，1为开启|
+| large | int |可选值: [0,1]，0为关闭，1为开启|
+| poop | int |可选值: [0,1]，0为关闭，1为开启|
+| rock | int |可选值: [0,1]，0为关闭，1为开启|
+| rock_small | int |可选值: [0,1]，0为关闭，1为开启|
+| small | int |可选值: [0,1]，0为关闭，1为开启|
+| sound_baby | int |可选值: [0,1]，0为关闭，1为开启|
+| sound_bone | int |可选值: [0,1]，0为关闭，1为开启|
+| worm | int |可选值: [0,1]，0为关闭，1为开启|

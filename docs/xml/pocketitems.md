@@ -2,95 +2,91 @@
 tags:
   - File
 ---
-# File "pocketitems.xml"
+# 文件 "pocketitems.xml"
 
-**Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.
+**Resource-Folder**{: .xmlInfo .red}：在模组的resource文件夹中使用此文件会替换原始文件。
 
-**Content-Folder**{: .xmlInfo .green }: Using this file in a content folder will add new cards and pill effects.
+**Content-Folder**{: .xmlInfo .green }：在content文件夹中使用会添加新卡牌和药丸效果。
 
-`pocketitems.xml` is used for two significantly different purposes: Adding cards, and adding pill effects. These have different xml syntaxes, seen below.
+`pocketitems.xml` 用于两个截然不同的目的：添加卡牌和添加药丸效果。这两者的xml语法不同，见下文。
 
-## Cards & Runes
+## 卡牌与符文
 
-Cards are marked by `<card ... />`, like so:
-
+卡牌用 `<card ... />` 标记，例如：
 
 ```xml
 <card type="tarot" pickup="1" description="Where journey begins" id="1" name="0 - The Fool" announcer="375" announcerdelay="60" mimiccharge="2" />
 ```
-Runes use the same attributes as cards, but are marked by `<rune ... />` or the type equal `rune`. In the vanilla files, all runes except the soul stones use the `<rune>` tag and type. Soul stones use the `<card>` tag and the `rune` type, but seem to act the same as other runes regardless. An example for a rune would be:
+符文与卡牌属性相同，但用 `<rune ... />` 或 type="rune" 标记。在原版文件中，除soul stone外所有符文都用`<rune>`标签和type。soul stone用`<card>`标签和`rune`类型，但行为与其他符文一致。符文示例：
 ```xml
 <rune type="rune" pickup="3" achievement="89" description="Some description" id="32" name="Some Rune" announcer="341" mimiccharge="2" />
 ```
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|name|string|The name of the card.|
-|description|string|The description of the card.|
-|hud|string|The name of the card's front animation in `content/gfx/ui_cardfronts.anm2`, which is only used in mods.|
-|type|string|Either `tarot`, `tarot_reverse`, `suit`, `special`, `rune`, or `object`. All types other than `object` and `rune` can be mimicked with Blank Card, while cards of type `rune` can be mimicked with Clear Rune. [ ](#){: .reporplus .tooltip .badge }|
-|mimiccharge|int|The amount of charge the card should take to mimic with Blank Card / Clear Rune. [ ](#){: .reporplus .tooltip .badge }|
-|pickup|int|The entities2.xml subtype corresponding to this card's pickup. [ ](#){: .reporplus .tooltip .badge }|
-|announcer|int|The sound ID to play when the card is used.|
-|announcerdelay|int|The delay in frames between card use and the sound provided being played.|
-|achievement|int|Ties the card to a vanilla achievement.|
-|greedmode|bool|Is the pocketitem available in greedmode. Default = true|
+|name|string|卡牌名称|
+|description|string|卡牌描述|
+|hud|string|卡牌正面动画在`content/gfx/ui_cardfronts.anm2`中的名称，仅mod中使用。|
+|type|string|`tarot`、`tarot_reverse`、`suit`、`special`、`rune`或`object`。除`object`和`rune`外的类型可用Blank Card模仿，`rune`类型可用Clear Rune模仿。[ ](#){: .reporplus .tooltip .badge }|
+|mimiccharge|int|用Blank Card/Clear Rune模仿时所需充能。[ ](#){: .reporplus .tooltip .badge }|
+|pickup|int|该卡牌pickup对应的entities2.xml子类型。[ ](#){: .reporplus .tooltip .badge }|
+|announcer|int|使用卡牌时播放的音效ID|
+|announcerdelay|int|卡牌使用与音效播放之间的帧延迟|
+|achievement|int|与原版成就绑定的卡牌|
+|greedmode|bool|该pocketitem是否可在greedmode获得。默认true|
 
-In both Afterbirth+ and Repentance, when adding a custom card you must include the `hud` tag, and an anm2 in your mod's `content/gfx/` folder called `ui_cardfronts.anm2`. This anm2 must contain an animation with the same name as specified in the `hud` tag, which will be displayed in the HUD as your card's front. Once you've added a card to the game, you'll be able to get its id through lua by using the `Isaac.GetCardIdByName(string cardHudName)` function, which takes the name specified in the `hud` tag.
+在Afterbirth+和Repentance中，添加自定义卡牌时必须包含`hud`标签，并在mod的`content/gfx/`文件夹下添加名为`ui_cardfronts.anm2`的anm2。该anm2需包含与`hud`标签同名的动画，作为卡牌正面显示在HUD中。卡牌添加后，可通过lua的`Isaac.GetCardIdByName(string cardHudName)`函数获取其id，参数为`hud`标签指定的名称。
 
-**If the card uses the same backside as an already existing pickup**, you should set `pickup` to the subtype of the existing pickup and not worry about `entities2.xml`. Otherwise, you can use the `pickup` tag in Repentance, to set the card's HUD and pickup visuals through a single anm2. In order to use it, you must add a matching `entities2.xml` entry with the tarot card type and variant (5.300), using the subtype specified in the `pickup` tag, as seen below:
+**如果卡牌背面与已有pickup相同**，应将`pickup`设为已有pickup的子类型，无需关心entities2.xml。否则可在Repentance中用`pickup`标签，通过一个anm2设置卡牌HUD和pickup外观。为此需在entities2.xml中添加对应的tarot卡类型和variant（5.300），subtype与`pickup`一致，如下：
 
-
-In `pocketitems.xml`:
+在`pocketitems.xml`：
 ```xml
 <card type="object" name="Custom Object" description="" hud="Custom Object" pickup="160"/>
 ```
 
-
-In `content/entities2.xml`:
+在`content/entities2.xml`：
 ```xml
 <entities anm2root="gfx/" version="5">
 <entity anm2path="custom_object.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Custom Object" numGridCollisionPoints="24" shadowSize="16" stageHP="0" variant="300" subtype="160">
-	   <preload-snd id="8" /> <!-- BOOK_PAGE_TURN_12 -->
+   <preload-snd id="8" /> <!-- BOOK_PAGE_TURN_12 -->
 </entity>
 </entities>
 ```
 
+entities2.xml中指定的anm2应包含HUD和HUDSmall动画，以及常规pickup动画。可参考原版资源中的`gfx/05.301_tarot card.anm2`！即使entities2.xml放在content目录，anm2文件也应放在resources目录，否则游戏无法找到。例如上述entities2.xml，动画文件应放在`resources/gfx/custom_object.anm2`。
 
-The anm2 specified in `entities2.xml` should have the animations HUD and HUDSmall, alongside general pickup animations. See `gfx/05.301_tarot card.anm2` in the vanilla resources for an example! Even if you put the `entities2.xml` in the `content` directory, you should add the `anm2` file in the `resources` directory, otherwise the game won't find it. For example, with the provided `entities2.xml`, you would need to place the animation file at `resources/gfx/custom_object.anm2`.
+注意entities2.xml和`pickup`标签用到的subtype**不能**用于生成卡牌，否则会导致游戏崩溃。必须通过卡牌id生成/给予卡牌，可用`Isaac.GetCardIdByName(string cardHudName)`获取。如需在控制台查看当前id，可输入`g kID`并查找自动补全；原版最后一张卡是`k97`（Soul of Jacob），mod卡id从`k98`开始。
 
-Note that the subtype used in `entities2.xml` and the `pickup` tag **cannot** be used to spawn your card, and will instead crash the game. You must spawn / give your card via the card id, which you can obtain from `Isaac.GetCardIdByName(string cardHudName)` as described above. You can also check your card's current ID easily in the console by typing `g kID` and checking autocomplete; the last base game card is `k97`, the Soul of Jacob, so modded ids will start at `k98`.
+与Afterbirth+不同，pocketitems.xml中添加的卡牌会自动加入卡池。
 
-Unlike in Afterbirth+, cards added in `pocketitems.xml` get automatically added to the card pool.
+## 药丸效果
 
-## Pill Effects
-
-Pill effects are significantly easier to add than cards, and are also automatically added to the pill pool when created. They are marked by `<pilleffect ... />`, like so:
+药丸效果比卡牌更易添加，且创建后会自动加入药丸池。用`<pilleffect ... />`标记，例如：
 
 ```xml
 <pilleffect announcer2="760" id="0" name="Bad Gas" announcer="328" class="1+" mimiccharge="1" />
 ```
 
 
-| Variable-Name | Possible Values | Description |
+| 变量名 | 可能的值 | 描述 |
 |:--|:--|:--|
-|name|string|Name of the pill effect|
-|description|string|Description of the pill effect (optional, used in I found pills)[ ](#){: .reporplus .tooltip .badge }|
-|class|string|A number from 0 - 3, indicating Joke, Minor, Medium, or Major effects. A `+` or `-` can be appended to note whether the pill is positive or negative, or excluded to denote neutral pills.[ ](#){: .reporplus .tooltip .badge }|
-|mimiccharge|int|Amount of charge the pill should take to mimic with Placebo[ ](#){: .reporplus .tooltip .badge }|
-|announcer|int|Sound ID to play when the pill is used|
-|announcer2|int|Sound ID to play when the pill is used as a horse pill[ ](#){: .reporplus .tooltip .badge }|
-|announcerdelay|int|Delay in frames between pill use and the sound provided being played|
-|achievement|int|Ties the pill effect to a vanilla achievement|
-|greedmode|bool|Is the pocketitem available in greedmode. Default = true|
+|name|string|药丸效果名称|
+|description|string|药丸效果描述（可选，用于I found pills）[ ](#){: .reporplus .tooltip .badge }|
+|class|string|0-3，分别表示笑话、轻微、中等、重大效果。可加`+`或`-`表示正/负面，不加表示中性。[ ](#){: .reporplus .tooltip .badge }|
+|mimiccharge|int|用Placebo模仿时所需充能[ ](#){: .reporplus .tooltip .badge }|
+|announcer|int|使用药丸时播放的音效ID|
+|announcer2|int|作为horse pill使用时播放的音效ID[ ](#){: .reporplus .tooltip .badge }|
+|announcerdelay|int|药丸使用与音效播放之间的帧延迟|
+|achievement|int|与原版成就绑定的药丸效果|
+|greedmode|bool|该pocketitem是否可在greedmode获得。默认true|
 
 
-Example of a `pocketitems.xml` file that adds one new card and one new pill effect:
+`pocketitems.xml` 文件示例，添加一张新卡牌和一个新药丸效果：
 
 ```xml
 <pocketitems>
-    <card type="object" name="Custom Object" description="It's custom!" hud="Custom Object" pickup="160"/>
-    <pilleffect name="Damage Up" class="3+" mimiccharge="12" />
+  <card type="object" name="Custom Object" description="It's custom!" hud="Custom Object" pickup="160"/>
+  <pilleffect name="Damage Up" class="3+" mimiccharge="12" />
 </pocketitems>
 ```
