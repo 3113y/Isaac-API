@@ -26,7 +26,7 @@ tags:
 |costume|int||
 |costumeSuffix|string|角色专属costume目录的后缀。例如The Forgotten的costumeSuffix为`_forgotten`，其目录为`C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\resources-dlc3\gfx\characters\costumes_forgotten`。|
 |bombs|int|初始炸弹数|
-|keys|coins|初始钥匙数|
+|keys|int|初始钥匙数|
 |coins|int|初始金币数|
 |card|int|初始卡牌ID|
 |pill|int||

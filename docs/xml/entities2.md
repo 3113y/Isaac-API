@@ -58,12 +58,11 @@ tags:
 |noreroll| 免疫D10重骰和Ace卡牌|
 |brimstone_soul| 该敌人生成的友好球灵火会发射细长鲜血激光柱|
 |explosive_soul| 该敌人生成的友好球灵火会发射爆炸泪弹|
-
 |homing_soul| 该敌人生成的友好球灵火会发射追踪泪弹|
 
 
 ## 楼层专属sprite
-如果实体的 `hasFloorAlts` 属性为 `true`，游戏会尝试根据当前关卡为该实体加载带有额外后缀的spritesheet。关卡的后缀由 stages.xml 文件中的 `suffix` 属性定义。如果找不到对应sprite，则加载默认spritesheet。
+如果实体的 `hasFloorAlts` 属性为 `true`，游戏会尝试根据当前关卡为该实体加载带有额外后缀的spritesheet。关卡的后缀由 stages.xml 文件中的 `suffix` 属性定义。如果找不到对应sprite，则加载默认spritesheet.
 
 **示例：**
 原始Gaper sprite：monster_017_gaper.png
