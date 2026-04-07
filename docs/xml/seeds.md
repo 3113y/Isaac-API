@@ -10,5 +10,5 @@ tags:
 
 **Resource-Folder**{: .xmlInfo .green}：将此文件放入模组的resource文件夹会把所有列出的种子加入种子黑名单。（彩蛋种子依然有效且依然被屏蔽）
 
-**Content-Folder**{: .xmlInfo  .green}：将此文件放入模组的resource文件夹会把所有列出的种子加入种子黑名单。
+**Content-Folder**{: .xmlInfo  .green}：将此文件放入模组的content文件夹会把所有列出的种子加入种子黑名单。
 
